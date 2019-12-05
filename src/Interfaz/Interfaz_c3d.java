@@ -96,7 +96,7 @@ public class Interfaz_c3d extends javax.swing.JFrame {
         initComponents();
         consola.setEditable(false);
         txtGramaticas.setEditable(false);
-        
+        txtCodMaquina.setEditable(false);
         jTabbedPane3.remove(3);
         this.setLocationRelativeTo(null);
         cerrar();
@@ -147,6 +147,9 @@ public class Interfaz_c3d extends javax.swing.JFrame {
         panelDibuj = new javax.swing.JPanel();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jInternalFrame2 = new javax.swing.JInternalFrame();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        txtCodMaquina = new javax.swing.JTextPane();
         jTabbedPane3 = new javax.swing.JTabbedPane();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane10 = new javax.swing.JScrollPane();
@@ -220,11 +223,11 @@ public class Interfaz_c3d extends javax.swing.JFrame {
         panelDibuj.setLayout(panelDibujLayout);
         panelDibujLayout.setHorizontalGroup(
             panelDibujLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 404, Short.MAX_VALUE)
+            .addGap(0, 376, Short.MAX_VALUE)
         );
         panelDibujLayout.setVerticalGroup(
             panelDibujLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 246, Short.MAX_VALUE)
+            .addGap(0, 271, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout panelBotonLayout = new javax.swing.GroupLayout(panelBoton);
@@ -236,8 +239,9 @@ public class Interfaz_c3d extends javax.swing.JFrame {
         panelBotonLayout.setVerticalGroup(
             panelBotonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelBotonLayout.createSequentialGroup()
+                .addGap(34, 34, 34)
                 .addComponent(panelDibuj, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 117, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         Automata.addTab("Dibujo", panelBoton);
@@ -250,11 +254,11 @@ public class Interfaz_c3d extends javax.swing.JFrame {
         jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
         jInternalFrame2Layout.setHorizontalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 388, Short.MAX_VALUE)
+            .addGap(0, 360, Short.MAX_VALUE)
         );
         jInternalFrame2Layout.setVerticalGroup(
             jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 288, Short.MAX_VALUE)
+            .addGap(0, 289, Short.MAX_VALUE)
         );
 
         jDesktopPane1.setLayer(jInternalFrame2, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -273,6 +277,27 @@ public class Interfaz_c3d extends javax.swing.JFrame {
         );
 
         Automata.addTab("Árboles", jDesktopPane1);
+
+        jScrollPane11.setViewportView(txtCodMaquina);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        Automata.addTab("Codigo Maquina", jPanel4);
 
         jTabbedPane3.setBackground(new java.awt.Color(102, 0, 51));
 
@@ -452,7 +477,7 @@ public class Interfaz_c3d extends javax.swing.JFrame {
         );
         pnlCodigoLayout.setVerticalGroup(
             pnlCodigoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+            .addGap(0, 408, Short.MAX_VALUE)
         );
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logo MA 150x161 LB.png"))); // NOI18N
@@ -476,25 +501,26 @@ public class Interfaz_c3d extends javax.swing.JFrame {
                     .addComponent(pnlCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Automata, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 300, Short.MAX_VALUE)
-                                .addComponent(jButton2)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(132, 132, 132))))
+                                .addComponent(jButton2)
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(132, 132, 132))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(Automata, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pnlCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
-                    .addComponent(Automata, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE))
+                    .addComponent(pnlCodigo, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE)
+                    .addComponent(Automata, javax.swing.GroupLayout.DEFAULT_SIZE, 408, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -1111,6 +1137,7 @@ public class Interfaz_c3d extends javax.swing.JFrame {
             public void run() {
                 new Interfaz_c3d().setVisible(true);
                 jTabbedPane3.setSelectedIndex(1);
+                Automata.setSelectedIndex(1);
             }
         });
     }
@@ -1219,7 +1246,8 @@ public class Interfaz_c3d extends javax.swing.JFrame {
     
     public static void notificarCM(String cad){
         
-//        txtCodMaquina.append(cad);
+       txtCodMaquina.setText(cad);
+       
         
     }
     static String cadena2="";
@@ -1342,7 +1370,7 @@ public static void dibujar(String direccionDot,String direccionPng){
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane Automata;
+    private static javax.swing.JTabbedPane Automata;
     private static javax.swing.JTextArea consola;
     private static javax.swing.JTextArea errores;
     private javax.swing.JMenuItem generar;
@@ -1364,8 +1392,10 @@ public static void dibujar(String direccionDot,String direccionPng){
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1385,6 +1415,7 @@ public static void dibujar(String direccionDot,String direccionPng){
     private javax.swing.JTable tbAutomatasErr;
     private javax.swing.JTable tboperaciones;
     private javax.swing.JTable tbtokens;
+    private static javax.swing.JTextPane txtCodMaquina;
     private static javax.swing.JTextArea txtGramaticas;
     public static javax.swing.JTextArea txt_Automata;
     public static javax.swing.JTextArea txt_AutomataCorrecto;
