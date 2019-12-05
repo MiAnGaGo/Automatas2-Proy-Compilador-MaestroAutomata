@@ -441,6 +441,7 @@ public class Interfaz_c3d extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Tabla operaciones", jScrollPane4);
 
+        pnlCodigo.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         pnlCodigo.setPreferredSize(new java.awt.Dimension(607, 100));
 
         javax.swing.GroupLayout pnlCodigoLayout = new javax.swing.GroupLayout(pnlCodigo);
