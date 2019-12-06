@@ -12,7 +12,7 @@ parser code
    
     
     public void syntax_error(Symbol s){
-        //Interfaz_c3d.notificar_er("Error R de sintaxis: "+ s.value +" Linea "+(s.left+1)+" columna "+(s.right+1) );
+         Interfaz_c3d.notificar_er("Error de sintaxis en la línea: "+(s.left+1)+", columna: "+(s.right+1)+". Existe un problema con el Token ["+ s.value+" ] y la estructura de la sentencia");
     }
 
     public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception{ 
@@ -37,8 +37,6 @@ action code
     String cadAutomata="";
     String cadAutomataCorr="";
     private SimuladorArbolBinario simulador = new SimuladorArbolBinario();
-
-    
 :}
 
 terminal String COMENTARIOS,ID,ENTERO,DECIMAL,MAS,MENOS,OREXP, POR, DIV, POT, ALFABETO, AUTOMATA, BOOLEANO, CONJUNTO, ESTADO, EXPRESION, FIN, FLOTANTE, GRAFICO, INI, MOSTRAR, NUEVO, FUNCION, VALIDAR, CON, AFD, AFN, EINICIAL, EFINAL, TRANSICION, HACIA, ER, MTABLA, ORDEN, OPRINPAL;
@@ -2970,11 +2968,22 @@ IMPLEFUNCION::= FUNCION AUTOMATA PAR_A:parenAf PAR_C LLAV_A SENTENCIAS LLAV_C
 DECTRANSICIONES::= TRANSICION ID:idest ASIG PAR_A ELEMENTOSTRANSICION PAR_C PYCOMA
             {:
                 Interfaz_c3d.notificar_er("Error de sintaxis en la linea "+(idestleft+1)+", la estructura no utiliza un "+idest );
-                
             :}
             | TRANSICION PAR_A:parent ELEMENTOSTRANSICION PAR_C PYCOMA
             {:
                Interfaz_c3d.notificar_er("Error de sintaxis en la linea "+(parentleft+1)+", se esperaba una asignacion(=) antes del '('");
+            :}
+            | TRANSICION ASIG PAR_A ELEMENTOESTADO COMA ELEMENTO COMA PAR_C PYCOMA:com
+            {:
+               Interfaz_c3d.notificar_er("Error de sintaxis en la linea "+(comleft+1)+", se esperaba un estado después de la  ','  para completar la transición");
+            :}
+            | TRANSICION ASIG PAR_A COMA ELEMENTO COMA ELEMENTOESTADO PAR_C PYCOMA:pcoma
+            {:
+               Interfaz_c3d.notificar_er("Error de sintaxis en la linea "+(pcomaleft+1)+", se esperaba un estado después del '('  para completar la transición");
+            :}
+            | TRANSICION ASIG PAR_A ELEMENTOESTADO COMA COMA ELEMENTOESTADO PAR_C PYCOMA:fele
+            {:
+               Interfaz_c3d.notificar_er("Error de sintaxis en la linea "+(feleleft+1)+", se esperaba un elemento entre los estados para completar la transición");
             :}
 ;
 
@@ -3010,7 +3019,3 @@ DECLARA ::= TIPO ID:idD
             :}
        
 ;
-
-
-
-
